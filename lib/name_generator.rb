@@ -49,8 +49,9 @@ end
 
 #capitalize_every_other method captializes every other character
 #
-#+i is a integer used for counting and string manipulation
+#
 #+name is the the string id method accepts to captialize every other letter
+#    assumes the id string is all lower case
 #
 #returns a string with every other character capitalized
 def capitalize_every_other(name)
