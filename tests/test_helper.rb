@@ -1,2 +1,2 @@
 require "minitest/autorun"
-require "minitest/rg"require
+require "minitest/rg"
