@@ -10,4 +10,10 @@ result = true
 assert(result,"this should have not failed")
 end
 
+#first test
+def test_lowercase_name
+result = lowercase_name("ShawnMichaUD")
+assert_equal("shawnmichaud", result, "failure")
+end
+
 end
