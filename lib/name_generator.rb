@@ -9,26 +9,16 @@
 #
 #returns the id with alternating capital letters and xX_ _Xx
 def name_generator(name)
-#   name = lowercase_name(name)
 	 name = remove_punctuation(name)
 	 name = remove_numbers(name)
    name = capitalize_every_other(name)
-   add_characters(name)
-end
-
-
-#lowercase_name method makes all characters lower case
-#
-#+name is a string id 
-#
-#returns a string whose characters are now all lower case
-def lowercase_name(name)
-		name.downcase
+   add_characters_if_valid(name)
 end
 
 
 
-#remove_punctuation method removes all non letter or number from string
+
+#remove_punctuation method removes all non-number and non-letter characters from string
 #
 #+name is the string id method accepts to work with
 #
@@ -47,11 +37,12 @@ def remove_numbers(name)
     name.gsub(/[0-9]/,"")
 end
 
-#capitalize_every_other method captializes every other character
+#capitalize_every_other method first down cases the whole string
+#  then captializes every other character
 #
 #
 #+name is the the string id method accepts to captialize every other letter
-#    assumes the id string is all lower case
+#    
 #
 #returns a string with every other character capitalized
 def capitalize_every_other(name)
@@ -68,11 +59,22 @@ end
 
 
 
-#add_characters method adds xX_ befor and _Xx after the id
+#add_characters_if_valid method adds xX_ before and _Xx after the id
+#  if the id is not a null string before or after removing all the 
+#  non- letter characters
 #
 #+name is the string id the method accepts 
 #
-#returns the id with extra characters
-def add_characters(name)
-		"xX_" + name + "_Xx"
+#returns the id with extra characters or a message that the ID chosen was bad 
+#   and to select a new ID.  In a real ID generator I would not send this message
+#   back in the name variable but would pass it through to the interface in a different 
+#   manner.  Since there is no interface to pass messages back to I chose to do it this way
+#   for now. 
+def add_characters_if_valid(name)
+	if name != ""
+		name = "xX_#{name}_Xx"
+	else 
+	  name = "Inavalid ID. Please enter new ID with only lower case letters."
+	end
+	name  	
 end
