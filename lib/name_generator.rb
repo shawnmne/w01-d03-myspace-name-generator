@@ -9,7 +9,7 @@
 #
 #returns the id with alternating capital letters and xX_ _Xx
 def name_generator(name)
-   name = lowercase_name(name)
+#   name = lowercase_name(name)
 	 name = remove_punctuation(name)
 	 name = remove_numbers(name)
    name = capitalize_every_other(name)
@@ -55,6 +55,7 @@ end
 #
 #returns a string with every other character capitalized
 def capitalize_every_other(name)
+    name = name.downcase
     i = 0
     while i < name.length do
       if i % 2 == 0
