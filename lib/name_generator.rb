@@ -59,7 +59,7 @@ end
 
 
 
-#add_characters_if_valid method adds xX_ before and _Xx after the id
+#add_characters_if_valid method adds xX_ before and _Xx after the id,
 #  if the id is not a null string before or after removing all the 
 #  non- letter characters
 #
